@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class CardsDeck
 {
-    public List<Card> cardsDeck = new List<Card>(52);
+    public List<Card> cardsDeckList = new List<Card>();
 }
