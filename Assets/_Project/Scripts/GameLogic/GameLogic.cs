@@ -42,7 +42,13 @@ public class GameLogic : MonoBehaviour
     public void EndTurn()
     {
         if (gameCompleted)
+        {
+            foreach (var player in players)
+            {
+                player.EndTurnInput();
+            }
             return;
+        }
 
         turn++;
         if (turn % 2 == 0)
@@ -65,7 +71,7 @@ public class GameLogic : MonoBehaviour
 
         if (round == (52 / 2))
         {
-            if (players[0].GetScoreValue() == players[0].GetScoreValue())
+            if (players[0].GetScoreValue() == players[1].GetScoreValue())
             {
                 GameNoWinner();
             }
@@ -88,7 +94,7 @@ public class GameLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        if (players[0].GetScoreValue() == players[1].GetScoreValue())
+        if (players[0].GetCardValue() == players[1].GetCardValue())
         {
             TurnNoWinner();
         }
@@ -127,8 +133,8 @@ public class GameLogic : MonoBehaviour
     /// </summary>
     private void GameWinner()
     {
-        int playerOneScore = players[0].GetCardValue();
-        int playerTwoScore = players[1].GetCardValue();
+        int playerOneScore = players[0].GetScoreValue();
+        int playerTwoScore = players[1].GetScoreValue();
 
         if (playerOneScore > playerTwoScore)
         {
