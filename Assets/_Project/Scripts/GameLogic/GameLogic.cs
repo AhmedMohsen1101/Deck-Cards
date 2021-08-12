@@ -88,7 +88,7 @@ public class GameLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        if (players[0].GetCardValue() == players[1].GetCardValue())
+        if (players[0].GetScoreValue() == players[1].GetScoreValue())
         {
             TurnNoWinner();
         }
