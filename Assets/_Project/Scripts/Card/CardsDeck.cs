@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
+[System.Serializable]
 public class CardsDeck
 {
-    public List<Card> cardsDeckList = new List<Card>();
+    public List<Card> list = new List<Card>();
 }

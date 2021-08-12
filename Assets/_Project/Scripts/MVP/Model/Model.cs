@@ -7,7 +7,7 @@ namespace Model
     public class Model
     {
         //Database
-        private CardsDeck_DataSO cardsData;
+        private CardsDeck_DataSO cardsDataSO;
         
         //view Data
         private Card currentCard;
@@ -15,17 +15,17 @@ namespace Model
         private bool isMyTurn;
         public Model()
         {
-            this.cardsData = AppMasterManager.Instance.cardsData;
+            this.cardsDataSO = AppMasterManager.Instance.cardsData;
             playerScore = 0;
         }
 
         public Card GetRandomCard()
         {
-            if (cardsData.cardsList.Count > 0)
+            if (cardsDataSO.cardsDeck.list.Count > 0)
             {
-                int randomCard = Random.Range(0, cardsData.cardsList.Count);
-                currentCard = cardsData.cardsList[randomCard];
-                //cardsData.cardsList.Remove(card);
+                int randomCard = Random.Range(0, cardsDataSO.cardsDeck.list.Count);
+                currentCard = cardsDataSO.cardsDeck.list[randomCard];
+                cardsDataSO.cardsDeck.list.Remove(currentCard);
                 return currentCard;
             }
             return null;

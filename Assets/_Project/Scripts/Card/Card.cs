@@ -7,4 +7,10 @@ public class Card
 {
     public string cardName;
     public int value;
+
+    public Card (string cardName, int value)
+    {
+        this.cardName = cardName;
+        this.value = value;
+    }
 }
