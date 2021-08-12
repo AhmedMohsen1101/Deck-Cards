@@ -8,6 +8,7 @@ public class AppMasterManager : MonoBehaviour
 
 
     public UserDataSO userDataSO;
+    public CardsDeck_DataSO cardsData;
     private void Awake()
     {
         if (Instance == null)

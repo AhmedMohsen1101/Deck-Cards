@@ -1,11 +1,13 @@
 ﻿
-
-
 namespace View
 {
     public interface IView
     {
-        void GetCard(IPresenter presenter);
+        void DisplayCard(Card card);
+        void DisplayScore(int score);
+        void UpdateTurn(bool isMyTurn);
+        int GetCardValue();
+        int GetScoreValue();
     }
 
 }
